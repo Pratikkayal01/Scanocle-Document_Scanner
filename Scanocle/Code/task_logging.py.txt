@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jul 15 22:46:47 2020
+
+@author: Pratik Kayal
+"""
+import os
+from param_config import config
+import csv
+#import pdb
+
+def task_logging(row):
+    #pdb.set_trace()
+    log_file = config.task_logging
+    headers = config.task_header
+    log_handler = open(log_file, 'a')
+    writer = csv.writer(log_handler)
+    statinfo = os.stat(log_file)
+
+    if statinfo.st_size >0:
+        writer.writerow(row)
+    else:
+        writer.writerow(headers)
+        writer.writerow(row)

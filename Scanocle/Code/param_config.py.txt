@@ -1,0 +1,43 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jul  6 12:16:34 2020
+
+@author: Pratik Kayal
+"""
+
+
+#import os
+#from flask import Flask
+
+
+###########
+##Config###
+###########
+
+
+class paramConfig():
+
+    def __init__(self,subject):
+
+
+        self.base_dir = "/home/scanocle/"
+
+        self.upload_folder = "/home/scanocle/Upload/"
+        self.temp_folder = "/home/scanocle/Temp/"
+        self.predict_folder = "/home/scanocle/Scanned/"
+        self.secret_key = 'PraSai1234'
+        self.MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+
+        #self.image_save_path =
+
+        #14th July
+        self.doc_percent = 50
+        self.image_quality = 80
+
+        #15th July
+        self.task_header = ['task_date','task_name','start_time','end_time','duration','status']
+        self.task_logging = '/home/scanocle/task_log.log'
+
+
+
+config = paramConfig(subject='Scanner Integration')
